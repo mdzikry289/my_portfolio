@@ -4,44 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muhamad Zikri | IT Support & Web Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
 --bg:#0f172a;
 --card:#1e293b;
---text:white;
+--text:#e5e7eb;
 --accent:#38bdf8;
 }
 
 body.light{
 --bg:#f8fafc;
---card:white;
+--card:#ffffff;
 --text:#0f172a;
 }
 
+*{box-sizing:border-box}
+
 body{
-font-family:Inter,sans-serif;
+font-family:Inter, sans-serif;
 margin:0;
 background:var(--bg);
 color:var(--text);
+line-height:1.6;
 scroll-behavior:smooth;
-}
-
-header{
-padding:120px 20px;
-text-align:center;
-background:linear-gradient(180deg,#020617,transparent);
-}
-
-h1{
-font-size:52px;
-margin-bottom:10px;
-}
-
-h2{
-color:var(--accent);
-margin-bottom:20px;
 }
 
 .container{
@@ -50,14 +38,34 @@ margin:auto;
 padding:60px 20px;
 }
 
+header{
+padding:120px 20px 80px 20px;
+text-align:center;
+}
+
+h1{
+font-size:48px;
+margin-bottom:8px;
+}
+
+h2{
+color:var(--accent);
+margin-bottom:20px;
+}
+
+p{max-width:700px;margin:auto}
+
 .section{
-margin-bottom:100px;
+margin-top:80px;
+}
+
+.grid{
+display:grid;
+gap:20px;
 }
 
 .skills{
-display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:12px;
 }
 
 .skill{
@@ -65,88 +73,115 @@ background:var(--card);
 padding:12px;
 border-radius:8px;
 text-align:center;
-transition:0.3s;
-}
-
-.skill:hover{
-transform:translateY(-4px);
 }
 
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
 
 .card{
 background:var(--card);
-padding:25px;
+padding:24px;
 border-radius:12px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
 }
 
 .projects{
-display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
 }
 
 .project img{
 width:100%;
 border-radius:8px;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
-button{
-padding:10px 20px;
-border:none;
+.buttons{
+margin-top:25px;
+}
+
+.btn{
+display:inline-block;
+padding:10px 18px;
 border-radius:6px;
+text-decoration:none;
 background:var(--accent);
-cursor:pointer;
-margin-top:10px;
+color:#000;
+margin:6px;
+font-weight:500;
+}
+
+.social{
+margin-top:30px;
+}
+
+.social a{
+margin:0 10px;
+font-size:22px;
+color:var(--text);
 }
 
 .toggle{
 position:fixed;
-right:20px;
 top:20px;
+right:20px;
+padding:8px 14px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+background:var(--accent);
+}
+
+.github-graph{
+margin-top:20px;
+text-align:center;
 }
 
 footer{
+margin-top:80px;
+padding:40px 20px;
 text-align:center;
-padding:40px;
-background:#020617;
+border-top:1px solid #334155;
 }
 
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:1s;
+.fade{opacity:0;transform:translateY(30px);transition:1s}
+.fade.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:600px){
+
+h1{font-size:36px}
+
+.container{
+padding:40px 16px
 }
 
-.fade.show{
-opacity:1;
-transform:translateY(0);
 }
-
 </style>
 </head>
 
 <body>
 
-<button class="toggle" onclick="toggleTheme()">Toggle Theme</button>
+<button class="toggle" onclick="toggleTheme()">Theme</button>
 
 <header>
 <h1>Muhamad Zikri</h1>
 <h2>IT Support & Web Developer</h2>
+
 <p>
-Helping individuals and businesses solve technology problems — from operating system installation and computer troubleshooting to building responsive websites.
+Helping individuals and businesses solve technical problems — from operating system installation and computer troubleshooting to building responsive websites.
 </p>
-<button onclick="document.getElementById('contact').scrollIntoView()">Contact Me</button>
+
+<div class="buttons">
+<a class="btn" href="#contact">Contact</a>
+<a class="btn" href="CV.pdf" download>Download CV</a>
+</div>
+
+<div class="social">
+<a href="https://github.com/mdzikry289" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/6285155338916" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
 </header>
 
 <div class="container">
@@ -154,21 +189,17 @@ Helping individuals and businesses solve technology problems — from operating 
 <section class="section fade">
 <h2>About Me</h2>
 <p>
-I am an IT professional with hands-on experience in IT support, system troubleshooting, operating system installation, and web development.
-</p>
+I am an IT professional with hands-on experience in IT support, computer troubleshooting, operating system installation, and web development.
 
-<p>
-My technical experience includes installing Windows and macOS systems, maintaining laptop and PC hardware, configuring software environments, and developing responsive websites using modern technologies.
-</p>
+My experience includes installing and maintaining Windows systems, hardware maintenance for laptops and PCs, configuring software environments, and building responsive websites using modern web technologies.
 
-<p>
 I also run freelance IT support services helping clients resolve technical issues remotely and onsite.
 </p>
 </section>
 
 <section class="section fade">
 <h2>Technical Skills</h2>
-<div class="skills">
+<div class="grid skills">
 <div class="skill">HTML5</div>
 <div class="skill">CSS / Bootstrap</div>
 <div class="skill">JavaScript</div>
@@ -181,10 +212,9 @@ I also run freelance IT support services helping clients resolve technical issue
 
 <section class="section fade">
 <h2>IT Support Skills</h2>
-<div class="skills">
+<div class="grid skills">
 <div class="skill">Windows Installation</div>
-<div class="skill">macOS Installation</div>
-<div class="skill">Hackintosh Setup</div>
+<div class="skill">System Troubleshooting</div>
 <div class="skill">Laptop & PC Maintenance</div>
 <div class="skill">Software Installation</div>
 <div class="skill">Remote Support</div>
@@ -193,7 +223,7 @@ I also run freelance IT support services helping clients resolve technical issue
 
 <section class="section fade">
 <h2>Services</h2>
-<div class="services">
+<div class="grid services">
 
 <div class="card">
 <h3>IT Support</h3>
@@ -205,7 +235,7 @@ Troubleshooting computers, resolving software issues, optimizing system performa
 <div class="card">
 <h3>Operating System Installation</h3>
 <p>
-Professional installation and configuration of Windows and macOS including drivers and essential software.
+Professional installation and configuration of Windows systems including drivers and essential software.
 </p>
 </div>
 
@@ -221,54 +251,57 @@ Building responsive websites for businesses, portfolios, and landing pages using
 
 <section class="section fade">
 <h2>Projects</h2>
-<div class="projects">
+<div class="grid projects">
 
 <div class="card project">
 <img src="https://picsum.photos/400/200" alt="project">
 <h3>Harilab Website</h3>
-<p>
-Company website built using Laravel, MySQL, HTML, CSS, and JavaScript.
-</p>
+<p>Company website built using Laravel, MySQL, HTML, CSS, and JavaScript.</p>
 </div>
 
 <div class="card project">
 <img src="https://picsum.photos/401/200" alt="project">
 <h3>Virtual Tour Project</h3>
-<p>
-Interactive virtual tour system used for project presentations and marketing.
-</p>
+<p>Interactive virtual tour system used for project presentations and marketing.</p>
 </div>
 
 </div>
 </section>
 
-<section class="section fade" id="github">
-<h2>GitHub Repositories</h2>
-<div id="repos"></div>
+<section class="section fade">
+<h2>GitHub Activity</h2>
+
+<div class="github-graph">
+<img src="https://ghchart.rshah.org/mdzikry289" alt="github graph" width="100%">
+</div>
+
 </section>
 
 <section class="section fade" id="contact">
 <h2>Contact</h2>
+
 <p>Email: mdzikry28@gmail.com</p>
-<p>Phone: 085155338916</p>
+<p>Phone / WhatsApp: 085155338916</p>
 <p>GitHub: github.com/mdzikry289</p>
+
 </section>
 
 </div>
 
 <footer>
-<p>© 2026 Muhamad Zikri</p>
-<div style="margin-top:20px;">
-<a href="https://github.com/mdzikry289" target="_blank" style="margin:0 10px;color:white;font-size:22px;"><i class="fab fa-github"></i></a>
-<a href="https://wa.me/6285155338916" target="_blank" style="margin:0 10px;color:white;font-size:22px;"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:mdzikry28@gmail.com" style="margin:0 10px;color:white;font-size:22px;"><i class="fas fa-envelope"></i></a>
+
+<div class="social">
+<a href="https://github.com/mdzikry289" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/6285155338916" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
+
+<p>© 2026 Muhamad Zikri</p>
+
 </footer>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <script>
-
 function toggleTheme(){
  document.body.classList.toggle("light");
 }
@@ -284,27 +317,6 @@ const observer=new IntersectionObserver(entries=>{
 })
 
 faders.forEach(el=>observer.observe(el));
-
-async function loadRepos(){
- const res=await fetch("https://api.github.com/users/mdzikry289/repos");
- const repos=await res.json();
-
- const container=document.getElementById("repos");
-
- repos.slice(0,6).forEach(repo=>{
- const div=document.createElement("div");
- div.className="card";
- div.innerHTML=`
- <h3>${repo.name}</h3>
- <p>${repo.description || "No description"}</p>
- <a href="${repo.html_url}" target="_blank">View Repository</a>
- `;
- container.appendChild(div);
- })
-}
-
-loadRepos();
-
 </script>
 
 </body>
