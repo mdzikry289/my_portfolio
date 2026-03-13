@@ -5,49 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muhamad Zikri | IT Support & Web Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+:root{
+--bg:#0f172a;
+--card:#1e293b;
+--text:white;
+--accent:#38bdf8;
+}
+
+body.light{
+--bg:#f8fafc;
+--card:white;
+--text:#0f172a;
+}
+
 body{
-font-family:Inter, sans-serif;
+font-family:Inter,sans-serif;
 margin:0;
-background:#0f172a;
-color:white;
+background:var(--bg);
+color:var(--text);
+scroll-behavior:smooth;
 }
 
 header{
-padding:80px 20px;
+padding:120px 20px;
 text-align:center;
+background:linear-gradient(180deg,#020617,transparent);
 }
 
 h1{
-font-size:48px;
+font-size:52px;
 margin-bottom:10px;
 }
 
 h2{
-color:#38bdf8;
+color:var(--accent);
+margin-bottom:20px;
 }
 
 .container{
-max-width:1000px;
+max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:60px 20px;
 }
 
 .section{
-margin-bottom:80px;
+margin-bottom:100px;
 }
 
 .skills{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px;
+gap:12px;
 }
 
 .skill{
-background:#1e293b;
-padding:10px;
+background:var(--card);
+padding:12px;
 border-radius:8px;
 text-align:center;
+transition:0.3s;
+}
+
+.skill:hover{
+transform:translateY(-4px);
 }
 
 .services{
@@ -57,15 +79,41 @@ gap:20px;
 }
 
 .card{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
+background:var(--card);
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
 }
 
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
+}
+
+.project img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:6px;
+background:var(--accent);
+cursor:pointer;
+margin-top:10px;
+}
+
+.toggle{
+position:fixed;
+right:20px;
+top:20px;
 }
 
 footer{
@@ -74,36 +122,51 @@ padding:40px;
 background:#020617;
 }
 
-button{
-padding:10px 20px;
-border:none;
-border-radius:6px;
-background:#38bdf8;
-cursor:pointer;
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 
 </style>
 </head>
+
 <body>
+
+<button class="toggle" onclick="toggleTheme()">Toggle Theme</button>
 
 <header>
 <h1>Muhamad Zikri</h1>
 <h2>IT Support & Web Developer</h2>
-<p>I help individuals and businesses solve technical problems, from operating system installation and computer troubleshooting to building responsive websites.</p>
+<p>
+Helping individuals and businesses solve technology problems — from operating system installation and computer troubleshooting to building responsive websites.
+</p>
 <button onclick="document.getElementById('contact').scrollIntoView()">Contact Me</button>
 </header>
 
 <div class="container">
 
-<section class="section">
+<section class="section fade">
 <h2>About Me</h2>
 <p>
-I am an IT professional with experience in IT support, computer troubleshooting, operating system installation, and web development. 
-I have handled Windows and macOS installations, software configuration, hardware maintenance, and website development using modern web technologies.
+I am an IT professional with hands-on experience in IT support, system troubleshooting, operating system installation, and web development.
+</p>
+
+<p>
+My technical experience includes installing Windows and macOS systems, maintaining laptop and PC hardware, configuring software environments, and developing responsive websites using modern technologies.
+</p>
+
+<p>
+I also run freelance IT support services helping clients resolve technical issues remotely and onsite.
 </p>
 </section>
 
-<section class="section">
+<section class="section fade">
 <h2>Technical Skills</h2>
 <div class="skills">
 <div class="skill">HTML5</div>
@@ -116,58 +179,79 @@ I have handled Windows and macOS installations, software configuration, hardware
 </div>
 </section>
 
-<section class="section">
+<section class="section fade">
 <h2>IT Support Skills</h2>
 <div class="skills">
 <div class="skill">Windows Installation</div>
 <div class="skill">macOS Installation</div>
 <div class="skill">Hackintosh Setup</div>
-<div class="skill">Hardware Maintenance</div>
+<div class="skill">Laptop & PC Maintenance</div>
 <div class="skill">Software Installation</div>
 <div class="skill">Remote Support</div>
 </div>
 </section>
 
-<section class="section">
+<section class="section fade">
 <h2>Services</h2>
 <div class="services">
+
 <div class="card">
 <h3>IT Support</h3>
-<p>Troubleshooting computers, fixing software issues, and optimizing system performance.</p>
+<p>
+Troubleshooting computers, resolving software issues, optimizing system performance, and maintaining IT devices.
+</p>
 </div>
 
 <div class="card">
 <h3>Operating System Installation</h3>
-<p>Installation and configuration of Windows and macOS including drivers and software setup.</p>
+<p>
+Professional installation and configuration of Windows and macOS including drivers and essential software.
+</p>
 </div>
 
 <div class="card">
 <h3>Website Development</h3>
-<p>Building responsive websites for business profiles, portfolios, and landing pages.</p>
+<p>
+Building responsive websites for businesses, portfolios, and landing pages using modern web technologies.
+</p>
 </div>
+
 </div>
 </section>
 
-<section class="section">
+<section class="section fade">
 <h2>Projects</h2>
 <div class="projects">
-<div class="card">
+
+<div class="card project">
+<img src="https://picsum.photos/400/200" alt="project">
 <h3>Harilab Website</h3>
-<p>Company website built using Laravel, MySQL, HTML, CSS, and JavaScript.</p>
+<p>
+Company website built using Laravel, MySQL, HTML, CSS, and JavaScript.
+</p>
 </div>
 
-<div class="card">
+<div class="card project">
+<img src="https://picsum.photos/401/200" alt="project">
 <h3>Virtual Tour Project</h3>
-<p>Interactive virtual tour system used for project presentation and marketing.</p>
+<p>
+Interactive virtual tour system used for project presentations and marketing.
+</p>
 </div>
+
 </div>
 </section>
 
-<section class="section" id="contact">
+<section class="section fade" id="github">
+<h2>GitHub Repositories</h2>
+<div id="repos"></div>
+</section>
+
+<section class="section fade" id="contact">
 <h2>Contact</h2>
 <p>Email: mdzikry28@gmail.com</p>
 <p>Phone: 085155338916</p>
-<p>GitHub: https://github.com/mdzikry289</p>
+<p>GitHub: github.com/mdzikry289</p>
 </section>
 
 </div>
@@ -175,6 +259,46 @@ I have handled Windows and macOS installations, software configuration, hardware
 <footer>
 <p>© 2026 Muhamad Zikri</p>
 </footer>
+
+<script>
+
+function toggleTheme(){
+ document.body.classList.toggle("light");
+}
+
+const faders=document.querySelectorAll(".fade");
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+ if(entry.isIntersecting){
+ entry.target.classList.add("show");
+ }
+ })
+})
+
+faders.forEach(el=>observer.observe(el));
+
+async function loadRepos(){
+ const res=await fetch("https://api.github.com/users/mdzikry289/repos");
+ const repos=await res.json();
+
+ const container=document.getElementById("repos");
+
+ repos.slice(0,6).forEach(repo=>{
+ const div=document.createElement("div");
+ div.className="card";
+ div.innerHTML=`
+ <h3>${repo.name}</h3>
+ <p>${repo.description || "No description"}</p>
+ <a href="${repo.html_url}" target="_blank">View Repository</a>
+ `;
+ container.appendChild(div);
+ })
+}
+
+loadRepos();
+
+</script>
 
 </body>
 </html>
